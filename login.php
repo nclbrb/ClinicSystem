@@ -3,9 +3,8 @@ session_start();
 
 // Handle login request
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Database connection
     $conn = new mysqli('localhost', 'root', '', 'clinic_db');
-
+    
     if ($conn->connect_error) {
         die('Connection failed: ' . $conn->connect_error);
     }
@@ -21,8 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if the username exists and if the password matches
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
-        // Verify the hashed password
-        if (password_verify($password, $user['password'])) {
+        if ($password === $user['password']) {
             $_SESSION['username'] = $username;
             header('Location: dashboard.php');
             exit();
@@ -73,7 +71,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Show the error message if it exists, then fade it out after 3 seconds
         $(document).ready(function() {
             <?php if (isset($error_message)): ?>
                 $('#error-message').addClass('show');
