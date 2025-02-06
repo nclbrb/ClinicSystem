@@ -56,5 +56,14 @@
             </div>
         </div>
     </nav>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+            <ul class="navbar-links">
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+
+        
 </body>
 </html>
