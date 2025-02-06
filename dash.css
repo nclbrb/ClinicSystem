@@ -111,3 +111,47 @@ body {
     overflow-y: hidden;
 }
 
+/* Container for Sidebar and Navbar */
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    color: #3c5ba4;
+}
+
+.navbar-links li {
+    display: inline-block;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #3c5ba4;
+}
+
+.navbar-links :hover {
+    color: #2f457a;
+}
