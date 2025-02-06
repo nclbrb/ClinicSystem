@@ -8,6 +8,7 @@
     <title>Dashboard</title>
 </head>
 <body>
+<div class="container">
     <nav class="sidebar">
         <header>
         <div class="image-text">
@@ -56,5 +57,39 @@
             </div>
         </div>
     </nav>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+            <ul class="navbar-links">
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+
+        <div class="dashboard-content">
+            <div class="dashboard-box">
+                <h1>Clinic System</h1>
+                <p>Welcome to the Clinic System, a Patient Management System.</p>
+            </div>
+
+            <!-- Rectangles -->
+            <div class="rectangles-container">
+                <div class="rectangle">
+                    <i class="material-icons icon">medical_information</i>
+                    <h2>Services</h2>
+                    <p>Brief Description</p>
+                </div>
+                <div class="rectangle">
+                    <i class="material-icons icon">perm_contact_calendar</i>
+                    <h2>Contacts</h2>
+                    <p>Brief Description</p>
+                </div>
+                <div class="rectangle">
+                    <i class="material-icons icon">location_on</i>
+                    <h2>Locations</h2>
+                    <p>Brief Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
