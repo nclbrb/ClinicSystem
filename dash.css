@@ -9,7 +9,10 @@ body {
     min-height: 100vh;
     background-color: #E4E9F7;
 }
-
+::selection {
+    background-color: #7cd29d;
+    color: #fff;
+}
 .sidebar {
     position: fixed;
     top: 0;
@@ -50,6 +53,15 @@ body {
     padding: 0 15px;
     border-radius: 6px;
     transition: all 0.3s ease;
+}
+
+.sidebar li a:hover {
+    background-color:  #7cd29d;
+}
+
+.sidebar li a .icon {
+    min-width: 30px;
+    text-align: center;
 }
 
 .sidebar li a .text {
