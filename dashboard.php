@@ -8,6 +8,7 @@
     <title>Dashboard</title>
 </head>
 <body>
+<div class="container">
     <nav class="sidebar">
         <header>
         <div class="image-text">
@@ -64,6 +65,14 @@
             </ul>
         </nav>
 
-        
+        <div class="dashboard-content">
+            <div class="dashboard-box">
+                <h1>Clinic System</h1>
+                <p>Welcome to the Clinic System, a Patient Management System.</p>
+            </div>
+
+    
+
+        </div>
 </body>
 </html>
