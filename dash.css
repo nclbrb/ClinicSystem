@@ -87,3 +87,17 @@ body {
     height: 100%;
     overflow-y: hidden;
 }
+.sidebar header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar .logo-text {
+    text-align: center;
+}
+
+.sidebar .logo-text .name {
+    font-size: 18px;
+    font-weight: 600;
+}

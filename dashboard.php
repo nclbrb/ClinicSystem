@@ -10,6 +10,14 @@
 <body>
     <nav class="sidebar">
         <header>
+        <div class="image-text">
+                <span class="image">
+                    <!-- Place Our Logo Here? -->
+                </span>
+                <div class="text logo-text">
+                    <span class="name">Clinic System</span>
+                </div>
+            </div>
         </header>
         <div class="menu-bar">
             <div class="menu">
