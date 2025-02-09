@@ -11,8 +11,6 @@ body {
     min-height: 100vh;
     background-color: #d9e5f3;
 }
-
-/* Sidebar */
 .sidebar {
     position: fixed;
     top: 0;
@@ -117,7 +115,7 @@ body {
     height: 100vh;
 }
 
-/* Navbar */
+
 .navbar {
     position: fixed;
     top: 0;
