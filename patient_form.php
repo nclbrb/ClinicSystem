@@ -129,13 +129,13 @@ $conn->close();
                                 </a>
                             </li>
                             <li class="nav-link">
-                                <a href="index.php">
+                                <a href="patient_form.php">
                                     <i class="material-icons icon">local_hospital</i>
                                     <span class="text nav-text">Admit a Patient</span>
                                 </a>
                             </li>
                             <li class="nav-link">
-                                <a href="view.php">
+                                <a href="list_patient.php">
                                     <i class="material-icons icon">people</i>
                                     <span class="text nav-text">Patient List</span>
                                 </a>
