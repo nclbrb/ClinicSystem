@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Quicksand:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #d9e5f3;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: #FFF;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.sidebar.close {
+    width: 88px;
+}
+
+.sidebar header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar .logo-text {
+    text-align: center;
+}
+
+.sidebar .logo-text .name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #3c5ba4;
+}
+
+.sidebar .menu {
+    margin-top: 40px;
+    flex-grow: 1;
+}
+
+.sidebar li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.sidebar li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    padding: 0 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.sidebar li a:hover {
+    background-color: #d9e5f3;
+}
+
+.sidebar li a .icon {
+    min-width: 30px;
+    text-align: center;
+    color: #3c5ba4;
+}
+
+.material-icons.icon {
+    color: #3c5ba4;
+    margin-right: 8px;
+}
+
+.sidebar li a .text {
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 10px;
+    color: #3c5ba4;
+}
+
+.sidebar li.search-box input {
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    font-size: 17px;
+    border-radius: 6px;
+    background-color: #d9e5f3;
+    border: none;
+}
+
+.sidebar .menu-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    color: #3c5ba4;
+}
+
+.navbar-links li {
+    display: inline-block;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #3c5ba4;
+}
+
+.navbar-links :hover {
+    color: #2f457a;
+}
+
+
+.main-content {
+    margin-left: 260px; 
+    margin-top: 70px;  
+    text-align: left;  
+    width: calc(100% - 260px); 
+}
+
+
+.patient-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.patient-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 18px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-left: 150px;
+}
+
+.patient-name {
+    font-weight: bold;
+    color: #333333b0;
+    flex: 1;
+    text-align: left;  
+}
+.button-container-wrapper {
+    display: flex; 
+    justify-content: space-between; 
+    width: 100%; 
+    padding: 0 20px; 
+}
+
+.button-container1,
+.button-container2,
+.button-container3 {
+    text-align: center; 
+}
+
+.button-container1 .back-button,
+.button-container2 .back-button,
+.button-container3 .back-button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.button-container .back-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.patient-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.patient-button a {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 15px;
+    background-color: #6bcc58;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.patient-button a:hover {
+    background-color: #447a2f;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #3c5ba4;
+    margin-bottom: 20px;
+}
+
+ .patient-details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  
+    padding: 20px;
+    margin-left: 250px;  
+    margin-top: 230px;  
+}
+
+.patient-details-table {
+    width: 80%; 
+    max-width: 900px;  
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Table Styles */
+.patient-details-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.patient-details-table th,
+.patient-details-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    color: #333;
+}
+
+.patient-details-table th {
+    background-color: #3fa43c;
+    color: #fff;
+    font-weight: bold;
+}
+
+.patient-details-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Style the back button */
+.back-button {
+    display: block;
+    width: 180px;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: #3c5ba4;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #2f457a;
+}
+.bottom-content {
+    margin-top: auto; 
+    padding-top: 40px; 
+}
+
+.bottom-content li {
+    list-style: none;
+}
+
+.bottom-content li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 15px;
+    height: 50px;
+    color: #3c5ba4;
+}
+
+.bottom-content li a .icon {
+    min-width: 30px;
+    text-align: center;
+    color: #3c5ba4;
+}
+
+.bottom-content li a .text {
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 10px;
+    color: #3c5ba4;
+}
+
+.bottom-content li a:hover {
+    background-color: #d9e5f3;
+}
