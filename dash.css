@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Quicksand:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -165,6 +171,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; /* Centers the content horizontally */
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .dashboard-box {

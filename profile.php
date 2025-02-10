@@ -193,7 +193,7 @@ $conn->close();
         <div class="profile-header">
           <div class="profile-image">
             <!-- Profile Icon Placeholder -->
-            <img src="https://via.placeholder.com/150" alt="Profile Picture">
+            <img src="profilepic.jpg" alt="Profile Picture">
           </div>
           <div class="profile-info">
             <h1><?php echo htmlspecialchars($patient['patient_full_name']); ?></h1>
