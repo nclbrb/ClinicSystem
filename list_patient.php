@@ -27,15 +27,15 @@ if (isset($_GET['id'])) {
 
 echo "<div class='button-container-wrapper'>";
     echo "<div class='button-container1'>";
-        echo "<a href='#' class='back-button'>Physical Test List</a>";
+        echo "<a href='physical.php' class='back-button'>Physical Test List</a>";
     echo "</div>";
 
     echo "<div class='button-container2'>";
-        echo "<a href='#' class='back-button'>Diagnostic Test</a>";
+        echo "<a href='diagnostic.php' class='back-button'>Diagnostic Test</a>";
     echo "</div>";
 
     echo "<div class='button-container3'>";
-        echo "<a href='#' class='back-button'>Diagnosis Test</a>";
+        echo "<a href='diagnosis.php' class='back-button'>Diagnosis Test</a>";
     echo "</div>";
 echo "</div>";
 
@@ -65,7 +65,7 @@ echo "</div>";
         echo "</tbody></table>";
 
       
-        echo "<a href='view.php' class='back-button'>Back to Patient List</a>";
+        echo "<a href='list_patient.php' class='back-button'>Back to Patient List</a>";
         echo "</div>";
         echo "</div>";
     } else {
