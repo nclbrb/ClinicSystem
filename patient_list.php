@@ -50,7 +50,7 @@ $result = $conn->query($sql);
           </li>
           <ul class="menu-links">
             <li class="nav-link">
-              <a href="#">
+              <a href="dashboard.php">
                 <i class="material-icons icon">home</i>
                 <span class="text nav-text">Homepage</span>
               </a>

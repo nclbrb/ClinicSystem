@@ -4,7 +4,7 @@ session_start();
 // Handle login request
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conn = new mysqli('localhost', 'root', '', 'clinic_db');
-    
+
     if ($conn->connect_error) {
         die('Connection failed: ' . $conn->connect_error);
     }
@@ -43,16 +43,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
+    <!-- Error Message Outside Login Container -->
+    <?php if (isset($error_message)): ?>
+        <div class="alert fade show text-center" id="error-message" role="alert">
+            <?php echo $error_message; ?>
+        </div>
+    <?php endif; ?>
+
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <div class="login-container p-4 border rounded shadow-lg">
+        <div class="login-container p-4 shadow-lg">
             <h2 class="text-center mb-4">Login</h2>
-            
-            <!-- Error Message -->
-            <?php if (isset($error_message)): ?>
-                <div class="alert alert-danger fade" id="error-message" role="alert">
-                    <?php echo $error_message; ?>
-                </div>
-            <?php endif; ?>
 
             <form method="POST" action="">
                 <div class="mb-3">
@@ -61,9 +61,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" required>
+                    <div class="password-container">
+                        <input type="password" name="password" id="password" class="form-control" required>
+                        <span class="eye-icon" id="toggle-password" onclick="togglePassword()">👁️</span>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary w-100">Login</button>
+                <button type="submit" class="btn btn-custom w-100">Login</button>
             </form>
         </div>
     </div>
@@ -71,14 +74,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Hide error message after a few seconds
         $(document).ready(function() {
-            <?php if (isset($error_message)): ?>
-                $('#error-message').addClass('show');
-                setTimeout(function() {
-                    $('#error-message').removeClass('show').fadeOut();
-                }, 3000);
-            <?php endif; ?>
+            setTimeout(function() {
+                $('#error-message').fadeOut();
+            }, 3000);
         });
+
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordField = document.getElementById("password");
+            const eyeIcon = document.getElementById("toggle-password");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.textContent = "🙈"; 
+            } else {
+                passwordField.type = "password";
+                eyeIcon.textContent = "👁️"; 
+            }
+        }
     </script>
 </body>
 </html>

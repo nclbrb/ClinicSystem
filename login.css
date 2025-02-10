@@ -1,20 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Quicksand:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
 body {
-    background-color: #f4f4f4;
+    background-color: #d9e5f3;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Error message styling */
+.alert {
+    background-color: #4d608b; 
+    color: white;
+    border-radius: 15px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 27%;
+    z-index: 1000;
+    opacity: 1; 
+    transition: opacity 0.5s ease-in-out;
 }
 
 .login-container {
     width: 100%;
     max-width: 400px;
+    height: 350px;
     background-color: #fff;
-    border-radius: 8px;
+    color: #1c2c51;
+    border-radius: 15px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 100px;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-.alert {
-    display: none;
-    transition: all 0.5s ease;
+.container {
+    position: relative;
+    padding-top: 50px;
 }
 
-.alert.show {
-    display: block;
+.btn-custom {
+    margin-top: 10px;
+    padding: 7px;
+    background-color: #3c5ba4; 
+    border: none;
+    color: white; 
+    border-radius: 8px;
+}
+
+.btn-custom:hover {
+    background-color: #2f457a; 
+    color: white;
+}
+
+.password-container {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.form-control {
+    border-radius: 10px;
+    margin-bottom: 20px;
 }

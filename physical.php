@@ -1,6 +1,4 @@
 <?php
-// physical.php
-
 // Process the form if it was submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Database connection details
@@ -18,28 +16,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } 
 
     // Retrieve and sanitize form data
-    $full_name            = $conn->real_escape_string($_POST['full_name']);
-    $dob                  = $_POST['dob'];
-    $age                  = (int)$_POST['age'];
-    $gender               = $conn->real_escape_string($_POST['gender']);
-    $past_medical_history = $conn->real_escape_string($_POST['past_medical_history']);
+    $full_name              = $conn->real_escape_string($_POST['full_name']);
+    $dob                    = $_POST['dob'];
+    $age                    = (int)$_POST['age'];
+    $gender                 = $conn->real_escape_string($_POST['gender']);
+    $past_medical_history   = $conn->real_escape_string($_POST['past_medical_history']);
     $family_medical_history = $conn->real_escape_string($_POST['family_medical_history']);
-    $allergies            = $conn->real_escape_string($_POST['allergies']);
-    $current_medications  = $conn->real_escape_string($_POST['current_medications']);
-    $height               = (float)$_POST['height'];
-    $weight               = (float)$_POST['weight'];
-    $bmi                  = (float)$_POST['bmi'];
-    $blood_pressure       = $conn->real_escape_string($_POST['blood_pressure']);
-    $heart_rate           = (int)$_POST['heart_rate'];
-    $temperature          = (float)$_POST['temperature'];
-    $general_appearance   = $conn->real_escape_string($_POST['general_appearance']);
-    $head_and_neck        = $conn->real_escape_string($_POST['head_and_neck']);
-    $eyes                 = $conn->real_escape_string($_POST['eyes']);
-    $ears                 = $conn->real_escape_string($_POST['ears']);
-    $nose_and_throat      = $conn->real_escape_string($_POST['nose_and_throat']);
-    $chest_and_lungs      = $conn->real_escape_string($_POST['chest_and_lungs']);
-    $heart                = $conn->real_escape_string($_POST['heart']);
-    $abdomen              = $conn->real_escape_string($_POST['abdomen']);
+    $allergies              = $conn->real_escape_string($_POST['allergies']);
+    $current_medications    = $conn->real_escape_string($_POST['current_medications']);
+    $height                 = (float)$_POST['height'];
+    $weight                 = (float)$_POST['weight'];
+    $bmi                    = (float)$_POST['bmi'];
+    $blood_pressure         = $conn->real_escape_string($_POST['blood_pressure']);
+    $heart_rate             = (int)$_POST['heart_rate'];
+    $temperature            = (float)$_POST['temperature'];
+    $general_appearance     = $conn->real_escape_string($_POST['general_appearance']);
+    $head_and_neck          = $conn->real_escape_string($_POST['head_and_neck']);
+    $eyes                   = $conn->real_escape_string($_POST['eyes']);
+    $ears                   = $conn->real_escape_string($_POST['ears']);
+    $nose_and_throat        = $conn->real_escape_string($_POST['nose_and_throat']);
+    $chest_and_lungs        = $conn->real_escape_string($_POST['chest_and_lungs']);
+    $heart                  = $conn->real_escape_string($_POST['heart']);
+    $abdomen                = $conn->real_escape_string($_POST['abdomen']);
 
     // Build the SQL query
     $sql = "INSERT INTO physical_tests 
@@ -49,7 +47,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Execute the query
     if ($conn->query($sql) === TRUE) {
-        $message = "Physical test results submitted successfully.";
+        // Get the last inserted ID
+        $last_id = $conn->insert_id;
+        
+        // Close the connection before redirection
+        $conn->close();
+        
+        // Redirect to profile.php with the new ID
+        header("Location: profile.php?id=" . $last_id);
+        exit();
     } else {
         $message = "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -90,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           </li>
           <ul class="menu-links">
             <li class="nav-link">
-              <a href="#">
+              <a href="dashboard.php">
                 <i class="material-icons icon">home</i>
                 <span class="text nav-text">Homepage</span>
               </a>
@@ -133,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h1>Physical Test Results Form</h1>
         <p>Please fill out the details below.</p>
 
-        <!-- Display success or error message -->
+        <!-- Display success or error message (only visible if not redirected) -->
         <?php if (isset($message)) { echo "<p>$message</p>"; } ?>
 
         <form action="" method="post">

@@ -34,7 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ('$full_name', '$dob', $age, '$gender', '$subjective_symptoms', '$objective_findings', '$assessment_goals', '$diagnosis', '$treatment_plans', '$medications', '$therapies', '$follow_up')";
 
     if ($conn->query($sql) === TRUE) {
-        $message = "Diagnosis submitted successfully.";
+        // Get the last inserted id
+        $last_id = $conn->insert_id;
+        $conn->close();
+        // Redirect to profile.php with the new id
+        header("Location: profile.php?id=" . $last_id);
+        exit();
     } else {
         $message = "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -75,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           </li>
           <ul class="menu-links">
             <li class="nav-link">
-              <a href="#">
+            <a href="dashboard.php">
                 <i class="material-icons icon">home</i>
                 <span class="text nav-text">Homepage</span>
               </a>
@@ -118,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h1>Diagnosis Form</h1>
         <p>Please fill out the details below using the S.O.A.P. method.</p>
         
-        <!-- Display message -->
+        <!-- Display message (if any and if not redirected) -->
         <?php if (isset($message)) { echo "<p>$message</p>"; } ?>
 
         <form action="" method="post">

@@ -1,7 +1,5 @@
 <?php
-// profile.php
 
-// If this is an AJAX request, process and return JSON data.
 if (isset($_GET['ajax']) && $_GET['ajax'] == 1) {
     // Expected parameters: test (Physical, Diagnostic, or Diagnosis) and patient_id
     if (!isset($_GET['test']) || !isset($_GET['patient_id'])) {
@@ -24,9 +22,6 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == 1) {
         exit;
     }
 
-    // Instead of matching by full name, we can use the unique patient id.
-    // However, if your test tables do not have a patient_id column,
-    // you can first look up the patient’s full name.
     $stmt = $conn->prepare("SELECT patient_full_name FROM admissions WHERE id = ?");
     $stmt->bind_param("i", $patientId);
     $stmt->execute();
@@ -53,8 +48,6 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == 1) {
         exit;
     }
 
-    // If possible, it’s best to have a patient_id column in the test tables.
-    // For this example, we continue matching on the patient’s full name.
     $sql = "SELECT * FROM $table WHERE full_name = ? ORDER BY submitted_at DESC LIMIT 1";
     $stmt = $conn->prepare($sql);
     if (!$stmt) {
@@ -143,7 +136,7 @@ $conn->close();
           </li>
           <ul class="menu-links">
             <li class="nav-link">
-              <a href="#">
+              <a href="dashboard.php">
                 <i class="material-icons icon">home</i>
                 <span class="text nav-text">Homepage</span>
               </a>
@@ -187,13 +180,13 @@ $conn->close();
         <div class="test-buttons">
           <button class="test-button">Physical Test</button>
           <button class="test-button">Diagnostic Test</button>
-          <button class="test-button">Diagnosis Test</button>
+          <button class="test-button">Diagnosis</button>
         </div>
 
         <div class="profile-header">
           <div class="profile-image">
             <!-- Profile Icon Placeholder -->
-            <img src="https://via.placeholder.com/150" alt="Profile Picture">
+            <img src="profilepic.jpg" alt="Profile Picture">
           </div>
           <div class="profile-info">
             <h1><?php echo htmlspecialchars($patient['patient_full_name']); ?></h1>
