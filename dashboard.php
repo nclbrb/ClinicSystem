@@ -28,19 +28,19 @@
                 </li>
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="dashboard.php">
                             <i class="material-icons icon">home</i>
                             <span class="text nav-text">Homepage</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="admission.php">
                             <i class="material-icons icon">local_hospital</i>
                             <span class="text nav-text">Admit a Patient</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="patient_list.php">
                             <i class="material-icons icon">people</i>
                             <span class="text nav-text">Patient List</span>
                         </a>
