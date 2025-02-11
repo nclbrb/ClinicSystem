@@ -68,7 +68,7 @@
         <div class="dashboard-content">
             <div class="dashboard-box">
                 <h1>Clinic System</h1>
-                <p>Welcome to the Clinic System, a Patient Management System.</p>
+                <p>Welcome to the Clinic System, a Clinic Management System.</p>
             </div>
 
             <!-- Rectangles -->
