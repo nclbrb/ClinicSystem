@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $last_id = $conn->insert_id;
         $conn->close();
         // Redirect to profile.php with the new id
-        header("Location: profile.php?id=" . $last_id);
+        header("Location: patient_list.php");
         exit();
     } else {
         $message = "Error: " . $sql . "<br>" . $conn->error;
