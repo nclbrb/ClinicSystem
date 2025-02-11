@@ -53,8 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Close the connection before redirection
         $conn->close();
         
-        // Redirect to profile.php with the new ID
-        header("Location: profile.php?id=" . $last_id);
+        header("Location: patient_list.php");
         exit();
     } else {
         $message = "Error: " . $sql . "<br>" . $conn->error;
